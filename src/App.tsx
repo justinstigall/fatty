@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import './App.css'
 import { FoodDiaryList } from './components/FoodDiaryList'
+import { TopBar } from './components/TopBar'
+import { Body } from './components/Body'
 import type { FoodDiaryEntry } from './types'
 
 function App() {
@@ -22,7 +24,10 @@ function App() {
 
   return (
     <>
-      <FoodDiaryList entries={diaryEntries} />
+      <TopBar />
+      <Body>
+        <FoodDiaryList entries={diaryEntries} />
+      </Body>
     </>
   )
 }
