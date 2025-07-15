@@ -2,9 +2,27 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { FoodDiaryList } from './components/FoodDiaryList'
+import type { FoodDiaryEntry } from './types'
 
 function App() {
   const [count, setCount] = useState(0)
+
+  const [diaryEntries] = useState<FoodDiaryEntry[]>([
+    {
+      id: '1',
+      food: { id: 'a', name: 'Apple', calories: 95 },
+      quantity: 1,
+      date: '2025-07-13',
+      notes: 'Fresh and crisp'
+    },
+    {
+      id: '2',
+      food: { id: 'b', name: 'Chicken Breast', calories: 165, protein: 31 },
+      quantity: 2,
+      date: '2025-07-12'
+    }
+  ])
 
   return (
     <>
@@ -25,9 +43,7 @@ function App() {
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <FoodDiaryList entries={diaryEntries} />
     </>
   )
 }
