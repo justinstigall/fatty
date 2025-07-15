@@ -3,10 +3,11 @@ import './App.css'
 import { FoodDiaryList } from './components/FoodDiaryList'
 import { TopBar } from './components/TopBar'
 import { Body } from './components/Body'
+import { FoodDiaryForm } from './components/FoodDiaryForm'
 import type { FoodDiaryEntry } from './types'
 
 function App() {
-  const [diaryEntries] = useState<FoodDiaryEntry[]>([
+  const [diaryEntries, setDiaryEntries] = useState<FoodDiaryEntry[]>([
     {
       id: '1',
       food: { id: 'a', name: 'Apple', calories: 95 },
@@ -22,10 +23,15 @@ function App() {
     }
   ])
 
+  function handleAddEntry(entry: FoodDiaryEntry) {
+    setDiaryEntries([entry, ...diaryEntries])
+  }
+
   return (
     <>
       <TopBar />
       <Body>
+        <FoodDiaryForm onAdd={handleAddEntry} />
         <FoodDiaryList entries={diaryEntries} />
       </Body>
     </>

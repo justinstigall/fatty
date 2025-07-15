@@ -20,7 +20,7 @@ export function FoodDiaryList({ entries }: { entries: FoodDiaryEntry[] }) {
             <Table.Row key={entry.id}>
               <Table.Cell>{entry.food.name}</Table.Cell>
               <Table.Cell>{entry.quantity}</Table.Cell>
-              <Table.Cell>{new Date(entry.date).toLocaleDateString()}</Table.Cell>
+              <Table.Cell>{new Date(entry.date).toLocaleString()}</Table.Cell>
               <Table.Cell>{entry.food.calories}</Table.Cell>
               <Table.Cell>{entry.notes}</Table.Cell>
             </Table.Row>
