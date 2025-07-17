@@ -49,21 +49,18 @@ export function FoodDiaryForm({ onAdd }: Props) {
     setNotes('')
   }
 
+  const inputStyle = {
+    padding: '0.75rem',
+    borderRadius: '8px',
+    border: '1px solid #e5e7eb',
+    fontSize: '1rem',
+    color: '#ffffffff',
+    background: '#4b70b7ff',
+    outline: 'none',
+  }
+
   return (
-    <Form.Root
-      onSubmit={handleSubmit}
-      style={{
-        marginBottom: '1.5rem',
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '1rem',
-        color: '#ffffffff',
-        background: '#4b70b7ff',
-        borderRadius: '16px',
-        boxShadow: '0 2px 12px #0002',
-        padding: '1.25rem',
-      }}
-    >
+    <Form.Root onSubmit={handleSubmit}>
       <Form.Field name="foodName">
         <Form.Label style={{ fontWeight: 500, marginBottom: 4 }}>Food name</Form.Label>
         <Form.Control asChild>
@@ -73,15 +70,7 @@ export function FoodDiaryForm({ onAdd }: Props) {
             value={foodName}
             onChange={e => setFoodName(e.target.value)}
             required
-            style={{
-              padding: '0.75rem',
-              borderRadius: '8px',
-              border: '1px solid #e5e7eb',
-              fontSize: '1rem',
-              color: '#ffffffff',
-              background: '#4b70b7ff',
-              outline: 'none',
-            }}
+            style={inputStyle}
           />
         </Form.Control>
       </Form.Field>
@@ -95,15 +84,7 @@ export function FoodDiaryForm({ onAdd }: Props) {
             onChange={e => setCalories(e.target.value)}
             required
             min={0}
-            style={{
-              padding: '0.75rem',
-              borderRadius: '8px',
-              border: '1px solid #e5e7eb',
-              fontSize: '1rem',
-              color: '#ffffffff',
-              background: '#4b70b7ff',
-              outline: 'none',
-            }}
+            style={inputStyle}
           />
         </Form.Control>
       </Form.Field>
@@ -117,15 +98,7 @@ export function FoodDiaryForm({ onAdd }: Props) {
             onChange={e => setQuantity(e.target.value)}
             required
             min={1}
-            style={{
-              padding: '0.75rem',
-              borderRadius: '8px',
-              border: '1px solid #e5e7eb',
-              fontSize: '1rem',
-              color: '#ffffffff',
-              background: '#4b70b7ff',
-              outline: 'none',
-            }}
+            style={inputStyle}
           />
         </Form.Control>
       </Form.Field>
@@ -139,15 +112,7 @@ export function FoodDiaryForm({ onAdd }: Props) {
               onChange={e => setDate(e.target.value)}
               required
               placeholder={getCurrentDate()}
-              style={{
-                padding: '0.75rem',
-                borderRadius: '8px',
-                border: '1px solid #e5e7eb',
-                fontSize: '1rem',
-                color: '#ffffffff',
-                background: '#4b70b7ff',
-                outline: 'none',
-              }}
+              style={inputStyle}
             />
           </Form.Control>
         </Form.Field>
@@ -160,15 +125,7 @@ export function FoodDiaryForm({ onAdd }: Props) {
               onChange={e => setTime(e.target.value)}
               required
               placeholder={getCurrentTime()}
-              style={{
-                padding: '0.75rem',
-                borderRadius: '8px',
-                border: '1px solid #e5e7eb',
-                fontSize: '1rem',
-                color: '#ffffffff',
-                background: '#4b70b7ff',
-                outline: 'none',
-              }}
+              style={inputStyle}
             />
           </Form.Control>
         </Form.Field>
@@ -181,34 +138,14 @@ export function FoodDiaryForm({ onAdd }: Props) {
             placeholder="Any notes?"
             value={notes}
             onChange={e => setNotes(e.target.value)}
-            style={{
-              padding: '0.75rem',
-              borderRadius: '8px',
-              border: '1px solid #e5e7eb',
-              fontSize: '1rem',
-              color: '#222',
-              background: '#f7f8fa',
-              outline: 'none',
-            }}
+            style={inputStyle}
           />
         </Form.Control>
       </Form.Field>
       <Form.Submit asChild>
         <button
           type="submit"
-          style={{
-            padding: '0.75rem',
-            fontWeight: 600,
-            background: 'linear-gradient(90deg,#6366f1,#818cf8)',
-            color: '#fff',
-            border: 'none',
-            borderRadius: '8px',
-            fontSize: '1.05rem',
-            marginTop: '0.5rem',
-            boxShadow: '0 2px 8px #6366f133',
-            cursor: 'pointer',
-            transition: 'background 0.2s'
-          }}
+          style={inputStyle}
         >
           Add Entry
         </button>
